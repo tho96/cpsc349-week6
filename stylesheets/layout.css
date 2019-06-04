@@ -1,0 +1,162 @@
+/* Add layout here */
+/* Layout 1: */
+/* 
+body{
+    display: grid;
+    /* grid-template-rows: auto auto  auto;
+}
+
+main{
+    display: grid;    
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.navigation{
+    grid-column-start: 4;
+    grid-column-end: 6;
+}
+
+.links{
+    grid-column: 1 / 6;
+    justify-self: center;
+
+}
+
+.links ul {
+    display: inline;
+}
+
+.links ul > li {
+    display: inline-block;
+} 
+*/
+
+/* Layout 2: */
+body{
+    display: grid;
+    grid-template-areas:
+    "header header ."
+    "main main navigation"
+    "main main links"
+    "footer footer ."
+}
+
+header {
+    grid-area: header;
+    justify-self: center;
+}
+
+main {
+    grid-area: main;
+}
+
+.navigation {
+    grid-area: navigation;
+}
+
+.links{
+    grid-area: links;
+    justify-content: center;
+    align-items: end;
+}
+
+footer {
+    grid-area: footer;
+    justify-self: center;
+    align-self: end;
+}
+
+
+/* Layout 3: */
+/*
+body{
+    display: grid;
+
+    grid-template-areas: 
+        "header header header header"
+        "footer footer footer footer"
+        "navigation main main links" ;
+}
+
+header {
+    grid-area: header;
+    justify-self: center;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.navigation {
+    grid-area: navigation;
+}
+main {
+    grid-area: main;
+}
+
+.links {
+    grid-area: links;
+} */
+
+/* Layout 4: */
+body{
+    display: grid;
+
+    grid-template-areas: 
+        "header header header header"
+        "navigation main main links"
+        "footer footer footer footer";
+}
+
+header {
+    grid-area: header;
+    justify-self: center;
+}
+
+footer {
+    grid-area: footer;
+    justify-self: center;
+}
+
+.navigation {
+    grid-area: navigation;
+}
+main {
+    grid-area: main;
+}
+
+article {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+article h2 {
+    order: 0;
+}
+
+/* article p {
+    order: 2;
+    flex-basis: 60%;
+    align-self: flex-end;
+} */
+
+article p:nth-child(4) {
+    flex-shrink: 45%;
+}
+
+article p:nth-child(3) {
+    order: 0;
+    align-self: flex-start;
+    flex-basis: 40%;
+    font: italic 1em Georgia, Times, "Times New Roman", serif;
+    font-size: 1em;
+    margin: 1.5em 2em 0 1.5em;
+    padding: 0;
+    color: #A9A9A9;
+}
+
+.links {
+    grid-area: links;
+}
+
+
